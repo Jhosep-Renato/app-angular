@@ -1,0 +1,7 @@
+<ng-container *ngIf="!loading">
+    <p>Aqui veras el detalle de los productos: {{product?.name}} </p>
+
+    <p *ngIf="product?.description">La descripcion es: {{product?.description}} </p>
+</ng-container>
+
+<p *ngIf="loading">Cargando...</p>

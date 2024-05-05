@@ -1,0 +1,22 @@
+<h1 class="my-4 text-center">Productos de Limpieza</h1>
+
+<div class="container d-flex justify-content-center text-center my-3">
+    <table class="table w-75">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Costo</th>
+                <th scope="col">Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of listProduct">
+                <th scope="row"> {{product.id}} </th>
+                <td>{{product.name}}</td>
+                <td [ngClass]="{'red': product.price < 5}">{{product.price | currency}}</td>
+                <td><button class="btn btn-outline-primary" [routerLink]="['/products', product.id]">Details</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

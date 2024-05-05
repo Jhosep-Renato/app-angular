@@ -1,0 +1,30 @@
+<h1 class="text-center">Formulario</h1>
+
+<div class="container w-25 my-5">
+
+    <form [formGroup]="formularioContacto" (ngSubmit)="enviar()">
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email" />
+            <div class="text-danger" *ngIf="hasErrors('email', 'email')">
+                Por favor tiene que ser formato email
+            </div>
+            <div class="text-danger" *ngIf="hasErrors('email', 'required')">
+                Por favor ingrese el correo
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password" />
+            <div class="text-danger" *ngIf="hasErrors('password', 'required')">
+                Por favor ingrese la constraseña
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+</div>
